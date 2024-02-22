@@ -4,8 +4,10 @@ const nextConfig = {
     remotePatterns: [{
       hostname: '**',
       protocol: 'https'
-    }],
-  }
+    }]},
+    async rewrites() {
+      return []
+}
 };
 
 export default nextConfig;

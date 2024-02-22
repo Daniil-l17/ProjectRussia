@@ -1,6 +1,8 @@
 'use client';
 
+import { LeadershipSphere } from '@/components/LeadershipSphere/LeadershipSphere';
 import Loading from '@/components/Loading/Loading';
+import { VdnxPosterHome } from '@/components/VdnhHome/VdnxPosterHome';
 import PrepraHeader from '@/components/mainscreen/prepraheader/PrepraHeader';
 import { useEffect, useState } from 'react';
 
@@ -21,6 +23,8 @@ export default function Home() {
       ) : (
         <>
           <PrepraHeader />
+          <LeadershipSphere/>
+          <VdnxPosterHome/>
         </>
       )}
     </>

@@ -8,15 +8,17 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import dayjs from 'dayjs';
 import Pagination from '@/components/Pogination/Pagination';
 import { ErrorServer } from '@/components/Error/ErrorServer';
+import { Metadata } from 'next';
 
 /*dayjs.locale('Ru')
 dayjs.extend(relativeTime)*/
 
+
 const Achievements = () => {
   const [data, setData] = useState<Achivment[]>([]);
   const [loading, setLoading] = useState(true);
-  const [active, setActive] = useState(1);
   const [error, setEror] = useState(false);
+  const [active, setActive] = useState(1);
 
   useEffect(() => {
     const fun = async (active: number) => {
