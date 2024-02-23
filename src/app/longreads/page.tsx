@@ -2,8 +2,7 @@
 import { ErrorServer } from '@/components/Error/ErrorServer';
 import Loading from '@/components/Loading/Loading';
 import { axiosServers } from '@/servers/Servers';
-import { Ilongreads, Ilongred } from '@/types/longreads';
-import axios from 'axios';
+import {Ilongred } from '@/types/longreads';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
@@ -14,7 +13,6 @@ const page = () => {
   const [error, setEror] = useState(false);
 
   useEffect(() => {
-    
     const fun = async () => {
       try {
         const result = await axiosServers.GetLongreads();

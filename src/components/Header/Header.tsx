@@ -5,7 +5,7 @@ import React, { memo } from 'react';
 
 const menu = [
   { name: 'Главная', link: '/' },
-  { name: 'Достиижения', link: '/achievements' },
+  { name: 'Достижения', link: '/achievements' },
   { name: 'Сферы лидерства', link: '/longreads' },
   { name: 'Информация', link: '/info' },
 ];

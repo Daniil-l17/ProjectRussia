@@ -10,9 +10,10 @@ const Pagination = ({ setActive, active }: { setActive: (el: number) => void; ac
 
   useEffect(() => {
     window.scroll(0, 0);
+    sessionStorage.setItem('num',JSON.stringify(active))
   }, [active]);
 
-  const next = () => active !== Math.max(...activePage) && setActive(active + 1);
+  const next = () => active !== Math.max(...activePage) && setActive(active + 1)
   const prev = () => active !== Math.min(...activePage) && setActive(active - 1);
 
   return (

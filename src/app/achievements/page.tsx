@@ -9,17 +9,18 @@ import dayjs from 'dayjs';
 import Pagination from '@/components/Pogination/Pagination';
 import { ErrorServer } from '@/components/Error/ErrorServer';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 /*dayjs.locale('Ru')
 dayjs.extend(relativeTime)*/
-
 
 const Achievements = () => {
   const [data, setData] = useState<Achivment[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setEror] = useState(false);
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(JSON.parse(sessionStorage.getItem('num')!) ?? 1);
 
+  
   useEffect(() => {
     const fun = async (active: number) => {
       setLoading(true);
@@ -40,7 +41,7 @@ const Achievements = () => {
       {loading ? (
         <Loading />
       ) : error ? (
-        <ErrorServer/>
+        <ErrorServer />
       ) : (
         <div className="flex flex-col">
           <h2 className=" text-[45px] text-[#dddbdb] cursor-pointer uppercase font-mediun mb-4">
@@ -51,23 +52,26 @@ const Achievements = () => {
           </div>
           <ul className="flex gap-8 flex-wrap ">
             {data.map(el => (
-              <li
-                key={el.id}
-                style={{
-                  backgroundImage: `url('${el.main_image}')`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                }}
-                className=" w-[350px] rounded-2xl relative cursor-pointer h-[320px]">
-                <span className="py-10 px-6  absolute right-0 left-0 bottom-0 top-0 bg-[#11111169] rounded-2xl hover:bg-[#cac9c931] transition duration-100">
-                  <h3 className=" text-white text-[28px] text-inherit font-semibold">{el.title}</h3>
-                  <p className=" w-[280px] text-white font-medium text-[17px] mt-3 z-10 relative">
-                    {el.subtitle}
-                  </p>
-                  {/*                  <p>{dayjs(new Date(el.publishedon)).fromNow()}</p>*/}
-                </span>
-              </li>
+              <Link href={`/achievements/${el.id}`} key={el.id}>
+                <li
+                  style={{
+                    backgroundImage: `url('${el.main_image}')`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                  }}
+                  className=" w-[350px] rounded-2xl relative cursor-pointer h-[320px]">
+                  <span className="py-10 px-6  absolute right-0 left-0 bottom-0 top-0 bg-[#11111169] rounded-2xl hover:bg-[#cac9c931] transition duration-100">
+                    <h3 className=" text-white text-[28px] text-inherit font-semibold">
+                      {el.title}
+                    </h3>
+                    <p className=" w-[280px] text-white font-medium text-[17px] mt-3 z-10 relative">
+                      {el.subtitle}
+                    </p>
+                    {/*                  <p>{dayjs(new Date(el.publishedon)).fromNow()}</p>*/}
+                  </span>
+                </li>
+              </Link>
             ))}
           </ul>
           <Pagination active={active} setActive={setActive} />
