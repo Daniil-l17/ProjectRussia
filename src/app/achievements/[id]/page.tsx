@@ -5,15 +5,16 @@ import { axiosServers } from '@/servers/Servers';
 import { IDetailAchiments } from '@/types/DetailAchiments';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import {useLayoutEffect, useState } from 'react';
+import {useEffect, useState } from 'react';
 
 export const page = ({ params }: { params: { id: string } }) => {
+
   const [data, setData] = useState<null | IDetailAchiments>(null);
   const [loading, setLoading] = useState(true);
   const [error, setEror] = useState(false);
   const [active, setActive] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const fun = async () => {
       try {
         const result = await axiosServers.GetDetailAchievements(+params.id);

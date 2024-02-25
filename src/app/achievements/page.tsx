@@ -15,8 +15,10 @@ const Achievements = () => {
   const [data, setData] = useState<Achivment[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setEror] = useState(false);
-  const [active, setActive] = useState(JSON.parse(sessionStorage.getItem('num')!) ?? 1);
+  const [active, setActive] = useState(1)
 
+  console.log(active)
+  
   
   useEffect(() => {
     const fun = async (active: number) => {

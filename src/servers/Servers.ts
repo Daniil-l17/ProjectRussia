@@ -6,7 +6,7 @@ import { Ilongreads } from "@/types/longreads"
 
 
 export const axiosServers = {
-  async GetAchievements (num:number) {
+  async GetAchievements (num:number = 1) {
     const {data} = await axiosBase.get<IAchivment>(`/achivments/russian/?page=${num}&per_page=8&seed=87665`)
     return data.achivments
   },
