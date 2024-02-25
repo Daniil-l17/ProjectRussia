@@ -1,13 +1,13 @@
 'use client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 const menu = [
   { name: 'Главная', link: '/' },
   { name: 'Достижения', link: '/achievements' },
   { name: 'Сферы лидерства', link: '/longreads' },
-  { name: 'Информация', link: '/info' },
+  {name: 'Достижения Регионов',link: '/RegionalAchievements'}
 ];
 
 export const Header = memo(() => {

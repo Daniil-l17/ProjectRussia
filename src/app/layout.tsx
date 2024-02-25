@@ -3,7 +3,7 @@ import {Montserrat} from "next/font/google";
 import "./globals.scss";
 import NextTopLoader from "nextjs-toploader";
 import { Header } from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import {Footer} from "@/components/Footer/Footer";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   title: "Россия – моя страна!",
   icons: '/RSV_transparent_bg.png',
 };
+
+
 
 export default function RootLayout({
   children,

@@ -5,9 +5,6 @@ const nextConfig = {
       hostname: '**',
       protocol: 'https'
     }]},
-    async rewrites() {
-      return []
-}
 };
 
 export default nextConfig;

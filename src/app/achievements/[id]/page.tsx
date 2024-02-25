@@ -12,7 +12,7 @@ export const page = ({ params }: { params: { id: string } }) => {
   const [loading, setLoading] = useState(true);
   const [error, setEror] = useState(false);
   const [active, setActive] = useState(0);
-  const images = data?.images?.[active].image;
+
   useLayoutEffect(() => {
     const fun = async () => {
       try {
