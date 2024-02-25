@@ -5,7 +5,7 @@ import { axiosServers } from '@/servers/Servers';
 import { IDetailAchiments } from '@/types/DetailAchiments';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import {useLayoutEffect, useState } from 'react';
 
 export const page = ({ params }: { params: { id: string } }) => {
   const [data, setData] = useState<null | IDetailAchiments>(null);

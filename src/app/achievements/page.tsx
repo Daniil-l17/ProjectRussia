@@ -3,16 +3,13 @@
 import Loading from '@/components/Loading/Loading';
 import { axiosServers } from '@/servers/Servers';
 import { Achivment } from '@/types/Achivments';
-import React, { useEffect, useState } from 'react';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
+
 import Pagination from '@/components/Pogination/Pagination';
 import { ErrorServer } from '@/components/Error/ErrorServer';
-import { Metadata } from 'next';
 import Link from 'next/link';
 
-/*dayjs.locale('Ru')
-dayjs.extend(relativeTime)*/
+
 
 const Achievements = () => {
   const [data, setData] = useState<Achivment[]>([]);
