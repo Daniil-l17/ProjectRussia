@@ -51,7 +51,6 @@ const Achievements = () => {
           </div>
           <ul className="flex gap-8 flex-wrap ">
             {data.map(el => (
-              <Link href={`/achievements/${el.id}`} key={el.id}>
                 <li
                   style={{
                     backgroundImage: `url('${el.main_image}')`,
@@ -70,7 +69,6 @@ const Achievements = () => {
                     {/*                  <p>{dayjs(new Date(el.publishedon)).fromNow()}</p>*/}
                   </span>
                 </li>
-              </Link>
             ))}
           </ul>
           <Pagination active={active} setActive={setActive} />
