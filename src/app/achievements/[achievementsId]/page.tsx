@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import {useEffect, useState } from 'react';
 
-export const page = ({ params }: { params: { id: string } }) => {
+export const page = ({ params }: { params: { achievementsId: string } }) => {
 
   const [data, setData] = useState<null | IDetailAchiments>(null);
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ export const page = ({ params }: { params: { id: string } }) => {
   useEffect(() => {
     const fun = async () => {
       try {
-        const result = await axiosServers.GetDetailAchievements(+params.id);
+        const result = await axiosServers.GetDetailAchievements(+params.achievementsId);
         setData(result);
       } catch {
         setEror(true);
